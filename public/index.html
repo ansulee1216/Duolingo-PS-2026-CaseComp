@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#181426">
+  <title>Character Chat · Mandarin practice</title>
+  <link rel="stylesheet" href="/style.css">
+  <script type="module" src="/app.js"></script>
+</head>
+<body>
+  <header class="masthead">
+    <div class="brand"><span class="mark" aria-hidden="true"><i></i><i></i><i></i></span> Character Chat</div>
+    <span class="prototype">CASE COMPETITION PROTOTYPE</span>
+  </header>
+  <main>
+    <section id="lobby">
+      <div class="hero">
+        <span class="tag"><span aria-hidden="true">✦</span> MANDARIN SPEAKING PRACTICE</span>
+        <h1>Small talk.<br><em>Big character.</em></h1>
+        <p>Pick a character and practice real Mandarin with a conversation partner.</p>
+      </div>
+      <div class="pick-label" id="pick-label">Choose your character</div>
+      <div class="characters" role="group" aria-labelledby="pick-label">
+        <button class="character lily" type="button" data-character="Lily" aria-pressed="true">
+          <span class="selection" aria-hidden="true"></span><img src="/lily.png" alt="">
+          <span class="character-info"><strong>Lily</strong><small>Low-key energy</small></span>
+        </button>
+        <button class="character zari" type="button" data-character="Zari" aria-pressed="false">
+          <span class="selection" aria-hidden="true"></span><img src="/zari.png" alt="">
+          <span class="character-info"><strong>Zari</strong><small>All-in energy</small></span>
+        </button>
+      </div>
+      <button class="primary" id="find">Find a partner <span aria-hidden="true">→</span></button>
+      <button class="secondary" id="cancel" hidden>Cancel search</button>
+      <p id="queue" class="note" role="status"></p>
+      <p class="note">Voice only · Character voice filter · 3-minute chat</p>
+    </section>
+    <section id="call" hidden>
+      <div class="session-head"><div><span class="tag">MANDARIN SCENARIO</span><h2>Make weekend plans</h2></div><div id="timer" role="timer" aria-label="Time remaining">3:00</div></div>
+      <p id="connection" class="note" role="status"></p>
+      <button id="hear" class="secondary wide" hidden>Hear your partner</button>
+      <div class="characters call-characters">
+        <div class="avatar" id="self"></div>
+        <div class="avatar" id="partner"></div>
+      </div>
+      <article class="panel">
+        <span class="tag">YOUR PRIVATE ROLE</span>
+        <p id="role"></p>
+        <small>Agree on a time and place in Mandarin. Ask questions, react, and suggest alternatives.</small>
+      </article>
+      <div class="tools">
+        <button class="secondary" id="help" aria-expanded="false" aria-controls="hints">Help me say it</button>
+        <button class="secondary" id="repeat" disabled>Say it again</button>
+      </div>
+      <div class="panel phrases" id="hints" hidden>
+        <div><strong lang="zh-Hans">七点半可以吗？</strong><span>Qī diǎn bàn kěyǐ ma?</span><small>Does seven thirty work?</small></div>
+        <div><strong lang="zh-Hans">我们去哪儿？</strong><span>Wǒmen qù nǎr?</span><small>Where should we go?</small></div>
+        <div><strong lang="zh-Hans">要不我们去夜市？</strong><span>Yàobù wǒmen qù yèshì?</span><small>How about we go to the night market?</small></div>
+      </div>
+      <p id="reaction" class="reaction" role="status"></p>
+      <div class="tools call-controls">
+        <button class="secondary" id="mute" aria-pressed="false">Mute mic</button>
+        <button class="danger" id="leave">Leave call</button>
+      </div>
+    </section>
+    <section id="recap" hidden>
+      <div class="hero recap-hero">
+        <span class="tag" id="xp"></span>
+        <h2>Chat complete!</h2>
+        <p id="recap-message" role="status"></p>
+      </div>
+      <article class="panel phrases">
+        <span class="tag">A CASUAL PHRASE TO KEEP</span>
+        <div><strong lang="zh-Hans">行啊</strong><span>Xíng a</span><small>Sure!</small></div>
+        <button id="save" class="secondary" aria-pressed="false">Save phrase</button>
+      </article>
+      <button id="again" class="primary">Find another partner <span aria-hidden="true">→</span></button>
+      <button id="change" class="secondary wide">Change character</button>
+    </section>
+    <p id="error" class="error" role="alert" hidden></p>
+  </main>
+</body>
+</html>
+
